@@ -1,0 +1,12 @@
+# Alternativa a `uv sync` para instalar el entorno con pip.
+ipykernel>=6.29,<8
+ipython>=8.20,<10
+jupyterlab>=4.2,<5
+matplotlib>=3.8,<4
+nbclient>=0.10,<1
+nbformat>=5.10,<6
+numpy>=1.26,<3
+pandas>=2.1,<3
+scikit-learn>=1.4,<2
+scipy>=1.11,<2
+statsmodels>=0.14.4,<0.15

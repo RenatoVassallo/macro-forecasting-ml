@@ -1,0 +1,61 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editores
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Entornos y secretos
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# PNG reproducibles; los PDF vectoriales usados por las slides se versionan
+/session1/figures/*.png
+*data/
+*figures/
+*slides/
+
+# Temporales de LaTeX
+/session1/slides/*.aux
+/session1/slides/*.bbl
+/session1/slides/*.bcf
+/session1/slides/*.blg
+/session1/slides/*.fdb_latexmk
+/session1/slides/*.fls
+/session1/slides/*.log
+/session1/slides/*.nav
+/session1/slides/*.out
+/session1/slides/*.run.xml
+/session1/slides/*.snm
+/session1/slides/*.synctex.gz
+/session1/slides/*.toc
+/session1/slides/*.vrb
+/session1/slides/*.xdv
+
+# Artefacto compilado; se distribuye fuera de Git
+/session1/slides/session1.pdf
