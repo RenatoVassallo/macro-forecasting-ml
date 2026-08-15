@@ -75,12 +75,14 @@ macro-forecasting-ml/
 ├── uv.lock                      entorno reproducible de uv
 ├── session1/
 │   ├── data/
-│   │   ├── monthly.csv           panel mensual consolidado (base compartida)
+│   │   ├── monthly.csv           panel mensual consolidado (BCRP, INEI, FRED)
 │   │   └── metadata.csv          etiquetas, grupos y rezagos de publicación
 │   ├── s1_fundamentos.ipynb
-│   └── utils.py                  carga, estilo y helpers compartidos del curso
+│   └── utils.py                  carga, estilo y helpers del curso
 ├── session2/
-│   └── s2_pipeline.ipynb         usa session1/utils.py y session1/data/
+│   ├── data/                     misma copia del panel mensual y su diccionario
+│   ├── s2_pipeline.ipynb
+│   └── utils.py
 └── session3/
     ├── data/
     │   ├── fredmd.csv            vintage congelado de FRED-MD (2026-07)
@@ -92,6 +94,11 @@ macro-forecasting-ml/
     ├── s3_extra_pbi_fredqd.ipynb
     └── utils.py                  loaders de FRED-MD/QD; reusa session1/utils.py
 ```
+
+Cada sesión es autocontenida: su notebook encuentra el `utils.py` y el `data/`
+que están junto a él, así que la carpeta puede copiarse o compartirse sola. La
+Sesión 3 es la excepción: su `utils.py` toma prestadas las métricas y el estilo
+de `session1/utils.py`.
 
 ## Requisitos
 
@@ -137,11 +144,12 @@ vectorial para las slides y PNG a 300 dpi para previsualización.
 
 ## Datos
 
-`session1/data/monthly.csv` contiene un panel mensual consolidado de inflación,
-actividad, encuestas, dinero y crédito, precios y variables externas del Perú
-(enero de 1996 a junio de 2026, con borde irregular al final).
-`session1/data/metadata.csv` documenta frecuencia, etiqueta, familia y rezago
-aproximado de publicación por serie. Fuente: exportaciones del sistema de
+`monthly.csv` contiene un panel mensual consolidado de inflación, actividad,
+encuestas, dinero y crédito, precios y variables externas del Perú (enero de
+1996 a junio de 2026, con borde irregular al final). `metadata.csv` documenta
+frecuencia, etiqueta, familia y rezago aproximado de publicación por serie.
+Ambos viven en `session1/data/` y `session2/data/`, con copias idénticas, para
+que cada sesión corra por su cuenta. Fuente: exportaciones del sistema de
 nowcasting del profesor a partir de BCRP, INEI y FRED.
 
 `session3/data/fredmd.csv` y `session3/data/fredqd.csv` son copias congeladas
