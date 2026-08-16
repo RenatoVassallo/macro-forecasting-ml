@@ -38,5 +38,7 @@ dist/
 # Slides
 slides/
 figures/
+papers/
 data/
-session3/
+session4/
+output/
